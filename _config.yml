@@ -1,118 +1,83 @@
-#
-# This file contains configuration flags to customize your site
-#
+# Site settings
+title: Patrick's Blog
+SEOTitle: Patrick的博客 | Patrick Blog
+header-img: img/home-bg.jpg
+email: patrick93.cheung@gmail.com
+description: ""
+keyword: "patrick"
+url: "https://patrickmen.github.io"     # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-# Name of your site (displayed in the header)
-name: "patrickmen's blog"
-# Short bio or description (displayed in the header)
-description: "A fresher, continues to grow!"
+# Publish posts or collection documents with a future date.
+future: true
 
-#
-# Flags below are optional
-#
+# SNS settings
+RSS: false
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://github.com/lemonchann/lemonchann.github.io/raw/master/images/blog.jpg
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
 
-# 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: https://github.com/lemonchann/lemonchann.github.io/raw/master/images/favicon.ico
 
-# Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
-# and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
-# it from the list(Delete '- name: ' and 'url: ', too!)
-navigation:
-  - name: Blog
-    url: /
-  - name: About
-    url: /about
-  - name: Archive
-    url: /archive
-  - name: Tags
-    url: /tags
 
-# Pagination
-paginate: 8
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
 
-excerpt_separator: <!-- more -->
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  #weibo: frommidworld #请输入你的微博个性域名 https://www.weibo.com/<thispart>
-  behance: # https://www.behance.net/<username>
-  dribbble:
-  zhihu:
-  email: patrick93.cheung@gmail.com
-  facebook:
-  flickr:
-  github: patrickmen 
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  tumblr: # https://<username>.tumblr.com
-  #twitter: frommidworld
-  youtube:
 
-# Text under the icons in footer
-footer-text: Copyright (c) 2020 patrickmen
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: # fromendworld
-
-# Gitalk
-gitalk:
-  clientID: 93822c846f3b4da9291c
-  clientSecret: 7fe1fd644fbd824bbe03238663502a29bb400e0e
-  repo: blog
-  owner: patrickmen
-
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url: https://patrickmen.github.io
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-# baseurl: 
-
-#
-# !! You don't need to change any of the configuration flags below !!
-#
-
-permalink: /:title/
-paginate_path: /page:num/
-
-# The release of Jekyll Now that you're using
-version: v1.2.0
-
-# Jekyll 3 now only supports Kramdown for Markdown
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
+  input: GFM                            # use Github Flavored Markdown !important
   syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
 
-# Use the following plug-ins
-plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-paginate
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+# Disqus settings
+disqus_username: patrick
+
+# Netease settings
+netease_comment: false
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "This is an example."
+sidebar-avatar: /img/avatar-patrick-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
+# Friends
+friends: []
